@@ -5,8 +5,7 @@
 set_start_default_values "y" "n" # Set both TURN and STUN server defaults
 use_args($args)
 print_parameters
-#$LocalIp = Invoke-WebRequest -Uri "http://169.254.169.254/latest/meta-data/local-ipv4"
-$LocalIP = (Test-Connection -ComputerName (hostname) -Count 1  | Select IPV4Address).IPV4Address.IPAddressToString
+$LocalIp = Invoke-WebRequest -Uri "http://169.254.169.254/latest/meta-data/local-ipv4"
 
 Write-Output "Private IP: $LocalIp"
 
