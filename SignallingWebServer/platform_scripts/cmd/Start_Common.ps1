@@ -1,8 +1,5 @@
 # Copyright Epic Games, Inc. All Rights Reserved.
 
-# Do setup as a common task, it is smart and will not reinstall if not required.
-Start-Process -FilePath "$PSScriptRoot\setup.bat" -Wait -NoNewWindow
-
 $global:ScriptName = $MyInvocation.MyCommand.Name
 $global:PublicIP = $null
 $global:StunServer = $null
