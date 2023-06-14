@@ -42,7 +42,7 @@ let rAF = window.mozRequestAnimationFrame ||
 let webRtcPlayerObj = null;
 let print_stats = false;
 let print_inputs = false;
-let connect_on_load = false;
+let connect_on_load = true;
 let ws;
 const WS_OPEN_STATE = 1;
 
@@ -85,8 +85,8 @@ let file = {
 
 // Optionally detect if the user is not interacting (AFK) and disconnect them.
 let afk = {
-    enabled: false,   // Set to true to enable the AFK system.
-    warnTimeout: 120,   // The time to elapse before warning the user they are inactive.
+    enabled: true,   // Set to true to enable the AFK system.
+    warnTimeout: 60,   // The time to elapse before warning the user they are inactive.
     closeTimeout: 10,   // The time after the warning when we disconnect the user.
 
     active: false,   // Whether the AFK system is currently looking for inactivity.
