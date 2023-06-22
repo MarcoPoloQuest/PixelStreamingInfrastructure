@@ -45,7 +45,7 @@ function print_parameters {
 
 function set_start_default_values($SetTurnServerVar, $SetStunServerVar) {
  # publicip and cirruscmd are always needed
- $global:PublicIP = Invoke-WebRequest -Uri "https://api.ipify.org" -UseBasicParsing
+ $global:PublicIP = Invoke-WebRequest -Uri "http://169.254.169.254/latest/meta-data/public-ipv4" -UseBasicParsing
  if ($global:PublicIP -eq $null -Or $global:PublicIP.length -eq 0) {
   $global:PublicIP = "127.0.0.1"
  } else {
