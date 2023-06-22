@@ -16,6 +16,7 @@ document.body.onload = function() {
 	config.setNumericSetting(NumericParameters.AFKTimeoutSecs, 60);
 	config.setFlagEnabled(Flags.AutoConnect, true);
 	config.setFlagEnabled(Flags.AutoPlayVideo, true);
+	config.setFlagEnabled(Flags.UseMic, true);
 
 	// Create a Native DOM delegate instance that implements the Delegate interface class
 	const stream = new PixelStreaming(config);
