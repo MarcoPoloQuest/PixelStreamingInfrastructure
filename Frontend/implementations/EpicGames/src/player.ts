@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-import { Config, PixelStreaming } from '@epicgames-ps/lib-pixelstreamingfrontend-ue5.2';
+import { Config, PixelStreaming, Flags, NumericParameters } from '@epicgames-ps/lib-pixelstreamingfrontend-ue5.2';
 import { Application, PixelStreamingApplicationStyle } from '@epicgames-ps/lib-pixelstreamingfrontend-ui-ue5.2';
 const PixelStreamingApplicationStyles =
     new PixelStreamingApplicationStyle();
@@ -12,6 +12,10 @@ document.body.onload = function() {
 
 	// Create a config object
 	const config = new Config({ useUrlParams: true });
+	config.setFlagEnabled(Flags.AFKDetection, true);
+	config.setNumericSetting(NumericParameters.AFKTimeoutSecs, 60);
+	config.setFlagEnabled(Flags.AutoConnect, true);
+	config.setFlagEnabled(Flags.AutoPlayVideo, true);
 
 	// Create a Native DOM delegate instance that implements the Delegate interface class
 	const stream = new PixelStreaming(config);
