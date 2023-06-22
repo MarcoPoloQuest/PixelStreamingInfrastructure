@@ -6,7 +6,7 @@ set_start_default_values "n" "y" # Set both TURN and STUN server defaults
 use_args($args)
 print_parameters
 
-$peerConnectionOptions = "{ \""iceServers\"": [{\""urls\"": [\""stun:" + $global:StunServer + "\""]}] }"
+$peerConnectionOptions = "{ \""iceServers\"": [{\""urls\"": [\""stun:" + $global:StunServer + "\"",\""turn:" + $global:TurnServer + "\""], \""username\"": \""PixelStreamingUser\"", \""credential\"": \""AnotherTURNintheroad\""}] }"
 
 $ProcessExe = "platform_scripts\cmd\node\node.exe"
 $Arguments = @("cirrus", "--peerConnectionOptions=""$peerConnectionOptions""", "--PublicIp=$global:PublicIp")
